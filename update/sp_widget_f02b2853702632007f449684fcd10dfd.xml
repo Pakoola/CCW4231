@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <client_script><![CDATA[function($scope) {
+  /* widget controller */
+  var c = this;
+	c.data.count = 0;
+	
+	$scope.$on("K17ListWidgetUpdated",function(evt,results){
+		console.log(results)
+		c.data.count = results.length;
+	})
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css/>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>k_17_count_display_widget</id>
+        <internal>false</internal>
+        <link/>
+        <name>k_17_count_display_widget</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-05-10 18:08:23</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>f02b2853702632007f449684fcd10dfd</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>k_17_count_display_widget</sys_name>
+        <sys_package display_value="ccw4231" source="x_snc_ccw4231">f0516c9f70e232007f449684fcd10d98</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ccw4231">f0516c9f70e232007f449684fcd10d98</sys_scope>
+        <sys_update_name>sp_widget_f02b2853702632007f449684fcd10dfd</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-05-10 18:10:14</sys_updated_on>
+        <template><![CDATA[<div>
+<!-- your widget template -->
+  <h2 class="jumbotron">
+    Total Records:{{c.data.count}}
+  </h2>
+</div>]]></template>
+    </sp_widget>
+</record_update>
